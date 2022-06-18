@@ -5,6 +5,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VNL</title> <!-- VNL = Volleyball Nations League -->
+
+    <style>
+        /* 기본 선택자 */
+        * {
+            color: black;
+        }
+
+        p {
+            background-color: yellow;
+        }
+        
+        .MB {
+            color: olivedrab;
+        }
+
+        #today {
+            color: darkorange;
+            font-size: larger;
+        }
+
+
+        /* 복합 선택자 */
+        li.O {
+            color: coral;
+        }
+
+        pre > .S {
+            color:dodgerblue;
+        }
+
+        ol .OH {
+            color:rebeccapurple
+        }
+
+        #week2 + li {
+            color: grey;
+        }
+
+        .free ~ li {
+            font-style: italic;
+        }
+
+
+        /* 가상 클래스 선택자 */
+        .match:hover {
+            background-color: yellow;
+        }
+
+        a:active {
+            background-color: orange;
+        }
+
+        input:focus {
+            background-color: darkolivegreen;
+        }
+
+        th:first-child {
+            color: red;
+        }
+
+        th:last-child {
+            color: blue;
+        }
+
+        td:nth-child(7n) {
+            background-color:lightblue;
+        }
+
+        td:not(.match) {
+            color: grey
+        }
+
+
+        /* 가상 요소 선택자 */
+        .L::after {
+            content: "(L)"
+        }
+
+        .cost::before {
+            content: "(유료) "
+        }
+
+        /* 속성 선택자 */
+        [value="Jeongah"] {
+            font-weight: bold;
+        }
+
+    </style>
 </head>
 <body>
     <img src="https://pbs.twimg.com/media/FMNNXo6WUAAJ0tv.jpg" alt="vnl" width="500px" height="500px"/>
@@ -20,14 +108,17 @@
             <th>SAT</th>
         </tr>
         <tr>
-            <td colspan="4"></td>
-            <td><u>6/2</u> <i>10:00</i><br>vs 일본</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="match"><u>6/2</u> <i>10:00</i><br>vs 일본</td>
             <td>3</td>
-            <td><u>4</u> <i>04:00</i><br>vs 독일</td>
+            <td class="match"><u>4</u> <i>04:00</i><br>vs 독일</td>
         </tr>
         <tr>
-            <td><u>5</u> <i>04:00</i><br>vs 폴란드</td>
-            <td><u>6</u> <i>08:00</i><br>vs 캐나다</td>
+            <td class="match"><u>5</u> <i>04:00</i><br>vs 폴란드</td>
+            <td class="match"><u>6</u> <i>08:00</i><br>vs 캐나다</td>
             <td>7</td>
             <td>8</td>
             <td>9</td>
@@ -39,13 +130,13 @@
             <td>13</td>
             <td>14</td>
             <td>15</td>
-            <td><u>16</u> <i>06:00</i><br>vs 도미니카</td>
-            <td><u>17</u> <i>03:00</i><br>vs 세르비아</td>
+            <td class="match"><u>16</u> <i>06:00</i><br>vs 도미니카</td>
+            <td class="match"><u>17</u> <i>03:00</i><br>vs 세르비아</td>
             <td>18</td>
         </tr>
         <tr>
-            <td><u>19</u> <i>09:00</i><br>vs 네덜란드</td>
-            <td><u>20</u> <i>04:00</i><br>vs 튀르키예</td>
+            <td class="match" id="today"><u>19</u> <i>09:00</i><br>vs 네덜란드</td>
+            <td class="match"><u>20</u> <i>04:00</i><br>vs 튀르키예</td>
             <td>21</td>
             <td>22</td>
             <td>23</td>
@@ -56,61 +147,62 @@
             <td>26</td>
             <td>27</td>
             <td>28</td>
-            <td><u>29</u> <i>23:00</i><br>vs 태국</td>
+            <td class="match"><u>29</u> <i>23:00</i><br>vs 태국</td>
             <td>30</td>
-            <td><u>7/1</u> <i>02:00</i><br>vs 브라질</td>
-            <td><u>2</u> <i>23:30</i><br>vs 이탈리아</td>
+            <td class="match"><u>7/1</u> <i>02:00</i><br>vs 브라질</td>
+            <td class="match"><u>2</u> <i>23:30</i><br>vs 이탈리아</td>
         </tr>
         <tr>
-            <td><u>3</u> <i>19:30</i><br>vs 중국</td>
+            <td class="match"><u>3</u> <i>19:30</i><br>vs 중국</td>
             <td colspan="6"></td>
         </tr>
     </table>
     <p>Final Phase: 7/13, 14, 16, 17</p>
+    <input type="text" />
     <hr>
     <ol>
-        <li><strong>Roster(6/2-6)</strong>
+        <li class="roster" id="week1"><strong>Roster(6/2-6)</strong>
             <ul>
                 <pre>
-                    <li> 3 | 염혜선</li>
-                    <li>17 | 박혜진</li>
-                    <li>19 | 김희진</li>
-                    <li><b>13 | 박정아</b></li>
-                    <li> 6 | 이선우</li>
-                    <li> 7 | 강소휘</li>
-                    <li>15 | 황민경</li>
-                    <li>16 | 이한비</li>
-                    <li>10 | 고예림</li>
-                    <li>12 | 이다현</li>
-                    <li> 8 | 정호영</li>
-                    <li> 9 | 이주아</li>
-                    <li> 4 | 한다혜</li>
-                    <li> 5 | 노  란</li>
+                    <li class="S"> 3 | 염혜선</li>
+                    <li class="S">17 | 박혜진</li>
+                    <li class="O">19 | 김희진</li>
+                    <li class="OH" value="Jeongah">13 | 박정아</li>
+                    <li class="OH"> 6 | 이선우</li>
+                    <li class="OH"> 7 | 강소휘</li>
+                    <li class="OH">15 | 황민경</li>
+                    <li class="OH">16 | 이한비</li>
+                    <li class="OH">10 | 고예림</li>
+                    <li class="MB">12 | 이다현</li>
+                    <li class="MB"> 8 | 정호영</li>
+                    <li class="MB"> 9 | 이주아</li>
+                    <li class="L"> 4 | 한다혜</li>
+                    <li class="L"> 5 | 노  란</li>
                 </pre>
 
             </ul>
         </li>
-        <li><strong>Roster(6/16-20)</strong>
+        <li class="roster" id="week2"><strong>Roster(6/16-20)</strong>
             <ul>
                 <pre>
-                    <li> 3 | 염혜선</li>
-                    <li>17 | 박혜진</li>
-                    <li>19 | 김희진</li>
-                    <li><b>13 | 박정아</b></li>
-                    <li> 6 | 이선우</li>
-                    <li> 7 | 강소휘</li>
-                    <li>15 | 황민경</li>
-                    <li>16 | 이한비</li>
-                    <li>10 | 고예림</li>
-                    <li>11 | 박혜민</li>
-                    <li> 8 | 정호영</li>
-                    <li> 9 | 이주아</li>
-                    <li>12 | 이다현</li>
-                    <li> 4 | 한다혜</li>
+                    <li class="S"> 3 | 염혜선</li>
+                    <li class="S">17 | 박혜진</li>
+                    <li class="O">19 | 김희진</li>
+                    <li class="OH" value="Jeongah">13 | 박정아</li>
+                    <li class="OH"> 6 | 이선우</li>
+                    <li class="OH"> 7 | 강소휘</li>
+                    <li class="OH">15 | 황민경</li>
+                    <li class="OH">16 | 이한비</li>
+                    <li class="OH">10 | 고예림</li>
+                    <li class="OH">11 | 박혜민</li>
+                    <li class="MB"> 8 | 정호영</li>
+                    <li class="MB"> 9 | 이주아</li>
+                    <li class="MB">12 | 이다현</li>
+                    <li class="L"> 4 | 한다혜</li>
                 </pre>
             </ul>
         </li>
-        <li><strong>Roster(6/29-7/3)</strong>
+        <li class="roster" id="week3"><strong>Roster(6/29-7/3)</strong>
             <ul>
                 <pre>
                     <li> 미정</li>
@@ -122,9 +214,9 @@
     <ul>
         <li>중계
             <ol type="a">
-                <li>KBS N SPORTS</li>
-                <li>쿠팡플레이</li>
-                <li>Volleyball World(외국어)</li>
+                <li class="free">KBS N SPORTS</li>
+                <li class="cost">쿠팡플레이</li>
+                <li class="cost">Volleyball World</li>
             </ol>
         </li>
         <li><a href="https://en.volleyballworld.com/volleyball/competitions/vnl-2022/" target="_blank">vnl 공식 사이트</a></li>
